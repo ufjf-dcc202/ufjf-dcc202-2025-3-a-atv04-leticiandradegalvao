@@ -6,7 +6,7 @@ test.describe("index.html", () => {
     page,
   }) => {
     await page.goto(`file://${process.cwd()}/index.html`);
-    await expect(page.locator("meta[charset]")).toHaveAttribute(
+    await expect(page.locator('meta[charset UTF-8]')).toHaveAttribute(
       "charset",
       "UTF-8"
     );
