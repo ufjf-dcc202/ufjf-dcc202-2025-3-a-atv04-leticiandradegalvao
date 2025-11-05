@@ -6,3 +6,4 @@ node_modules/
 # Playwright
 /blob-report/
 /playwright/.auth/
+tests/index.html
