@@ -6,7 +6,7 @@ test.describe("index.html", () => {
     page,
   }) => {
     await page.goto(`file://${process.cwd()}/index.html`);
-    await expect(page.locator('meta[charset UTF-8]')).toHaveAttribute(
+    await expect(page.locator('meta[charset= "UTF-8"]')).toHaveAttribute(
       "charset",
       "UTF-8"
     );
@@ -16,7 +16,7 @@ test.describe("index.html", () => {
     page,
   }) => {
     await page.goto(`file://${process.cwd()}/index.html`);
-    await expect(page.locator('meta[name="viewport"]')).toHaveAttribute(
+    await expect(page.locator('meta[name="viewport" content = "width=device-width, initial scale=1.0"]')).toHaveAttribute(
       "content",
       "width=device-width, initial-scale=1.0"
     );
@@ -24,7 +24,7 @@ test.describe("index.html", () => {
 
   test("deve ter o lang em pt-BR no html", async ({ page }) => {
     await page.goto(`file://${process.cwd()}/index.html`);
-    await expect(page.locator("html")).toHaveAttribute("lang", "pt-BR");
+    await expect(page.locator('html [lang="pt-BR"]')).toHaveAttribute("lang", "pt-BR");
   });
 
   test("deve ter um título no head com \"DCC202 - ATV04: SEU NOME\"", async ({ page }) => {
